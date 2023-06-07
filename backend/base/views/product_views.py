@@ -101,6 +101,7 @@ def recommendProductPearson(request):
         'name_score': name_score,
         'serialized_data': serializer.data
     }
+    print(",,,,",result)
     return Response(result)
 
 

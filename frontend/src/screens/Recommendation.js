@@ -13,6 +13,7 @@ function Recommendation() {
   const productPearsonRecommendation = useSelector(
     (state) => state.productPearsonRecommendation
   );
+  console.log(productPearsonRecommendation, "Ash");
   const { products } = productPearsonRecommendation;
 
   const loop = (name_score) => {
@@ -38,7 +39,7 @@ function Recommendation() {
       {userInfo ? (
         <div>
           <Row>
-            {products.serialized_data.map((product) => (
+            {products?.serialized_data.map((product) => (
               <>
                 <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
                   <RecommendPearson product={product} />
@@ -47,7 +48,7 @@ function Recommendation() {
             ))}
           </Row>
           <Row>
-            {products.name_score.map((name_score) => {
+            {products?.name_score.map((name_score) => {
               return (
                 <>
                   <h6>The correlated data for product is {name_score}</h6>
